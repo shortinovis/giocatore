@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class TestGiocatore {
     public static void main(String[] args){
         Scanner t = new Scanner(System.in);
-        Giocatore [] gt = new Giocatore[3];
+        Giocatore [] gt = new Giocatore [100];
         gt [0] = new Giocatore();
         gt [1] = new Giocatore();
         gt [2] = new Giocatore();
@@ -21,6 +21,9 @@ public class TestGiocatore {
         System.out.println("dammi capitano");gt[2].setCapitano(t.nextBoolean());
         t.nextLine();
 
+
+    }
+    public void aggiuntaGiocatore(){
 
     }
 }
