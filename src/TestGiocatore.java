@@ -18,13 +18,18 @@ public class TestGiocatore {
             System.out.println("1 - visualizzare il nome del capitano");
             System.out.println("1 - assegnare il ruolo di capitano in modo casuale se non ancora presente");
             System.out.println("8 - ESCI");
+            ind=t.nextInt();
 
             switch(ind){
                 case 1 :
                     System.out.println("dammi numero goal");goal=t.nextInt();
+                    t.nextLine();
                     System.out.println("dammi nome");nome=t.nextLine();
+                    t.nextLine();
                     System.out.println("dimmi se è capitano");capitano=t.nextBoolean();
+                    t.nextLine();
                     aggiuntaGiocatore(goal, nome, capitano, indice);
+                    indice++;
                     break;
                 case 2 :
 
@@ -53,10 +58,14 @@ public class TestGiocatore {
     }
     public static void aggiuntaGiocatore(int newGoal, String newNome, Boolean newCapitano, int indice){
         gt [indice] = new Giocatore(newGoal,newNome,newCapitano);
-        indice++;
-    }
-    public String stampa(){
 
+    }
+    public static String stampa(int ind){
+        String giocatore="";
+        for(int i=0; i<ind; i++){
+            giocatore=giocatore+gt [i].getNome() + "\t" + gt [i].getGoal() + "\t" +gt [i].getCapitano() + "\t";
+        }
+        return giocatore;
     }
     public void modifica(){
 
@@ -64,10 +73,5 @@ public class TestGiocatore {
     public void cancellazione(){
 
     }
-    public String giocatoriForti(){
 
-    }
-    public String capitano(){
-
-    }
 }

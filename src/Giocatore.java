@@ -14,7 +14,7 @@ public class Giocatore {
         capitano=false;
     }
     public Giocatore(int goal, String nome){
-        this.goal=goal;
+       setGoal(goal);
         this.nome=nome;
         capitano=false;
     }
