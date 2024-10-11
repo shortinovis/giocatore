@@ -21,41 +21,49 @@ public class TestGiocatore {
             System.out.println("8 - ESCI");
             ind=t.nextInt();
 
-            switch(ind){
-                case 1 :
-                    System.out.println("dammi numero goal");goal=t.nextInt();
+            switch(ind) {
+                case 1:
+                    System.out.println("dammi numero goal");
+                    goal = t.nextInt();
                     t.nextLine();
-                    System.out.println("dammi nome");nome=t.nextLine();
+                    System.out.println("dammi nome");
+                    nome = t.nextLine();
                     t.nextLine();
-                    System.out.println("dimmi se è capitano");capitano=t.nextBoolean();
+                    System.out.println("dimmi se è capitano");
+                    capitano = t.nextBoolean();
                     t.nextLine();
                     aggiuntaGiocatore(goal, nome, capitano, indice);
                     indice++;
 
                     break;
-                case 2 :
-                    for(int i=0; i<indice; i++){
+                case 2:
+                    for (int i = 0; i < indice; i++) {
                         System.out.println(stampa(i));
                     }
 
                     break;
-                case 3 :
+                case 3:
                     System.out.println("di quale giocatore vorresti modificare i dati?");
-                    sugador=t.nextInt();
-                    System.out.println("dammi nuovo numero goal");goal=t.nextInt();
+                    sugador = t.nextInt();
+                    System.out.println("dammi nuovo numero goal");
+                    goal = t.nextInt();
                     t.nextLine();
-                    System.out.println("dammi nuovo nome");nome=t.nextLine();
+                    System.out.println("dammi nuovo nome");
+                    nome = t.nextLine();
                     t.nextLine();
-                    System.out.println("dimmi se è capitano");capitano=t.nextBoolean();
+                    System.out.println("dimmi se è capitano");
+                    capitano = t.nextBoolean();
                     t.nextLine();
                     modifica(sugador, goal, nome, capitano);
 
                     break;
-                case 4 :
+                case 4:
 
                     break;
-                case 5 :
-
+                case 5:
+                    for (int i = 0; i < indice; i++) {
+                    System.out.println(visualizzazioneForte(i));
+            }
                     break;
                 case 6 :
 
@@ -82,13 +90,20 @@ public class TestGiocatore {
             giocatore=giocatore+gt [i].getNome() + "\t" + gt [i].getGoal() + "\t" +gt [i].getCapitano() + "\t";
         return giocatore;
     }
-    public static void modifica(int giocat, int newGoal, String newNome, Boolean newCapitano){
-        gt[giocat].setGoal(newGoal);
-        gt[giocat].setNome(newNome);
-        gt[giocat].setCapitano(newCapitano);
+    public static void modifica(int sugador, int newGoal, String newNome, Boolean newCapitano){
+        gt[sugador].setGoal(newGoal);
+        gt[sugador].setNome(newNome);
+        gt[sugador].setCapitano(newCapitano);
     }
     public void cancellazione(){
 
     }
-
+    public static String visualizzazioneForte(int giocat){
+        String GiocatoreForte="";
+        if(gt[giocat].getGoal()<5)
+            return "non trovato";
+        else
+            GiocatoreForte=gt[giocat].getNome();
+            return GiocatoreForte;
+    }
 }
