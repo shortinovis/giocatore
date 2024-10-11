@@ -61,4 +61,5 @@ public class Giocatore {
     public void setCapitano(boolean capitano){
         this.capitano=capitano;
     }
+
 }
