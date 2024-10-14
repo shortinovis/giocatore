@@ -4,44 +4,44 @@ public class Giocatore {
     private boolean capitano;
 
     public Giocatore(int goal, String nome, boolean capitano){
-        this.goal=goal;
-        this.nome=nome;
-        this.capitano=capitano;
+        setGoal(goal);
+        setNome(nome);
+        setCapitano(capitano);
     }
     public Giocatore(){
-        goal=0;
-        nome=null;
-        capitano=false;
+        setGoal(0);
+        setNome(null);
+        setCapitano(false);
     }
     public Giocatore(int goal, String nome){
-       setGoal(goal);
-        this.nome=nome;
-        capitano=false;
+        setGoal(goal);
+        setNome(nome);
+        setCapitano(false);
     }
     public Giocatore(int goal, boolean capitano){
-        this.goal=goal;
-        this.nome=null;
-        this.capitano=capitano;
+        setGoal(goal);
+        setNome(null);
+        setCapitano(capitano);
     }
     public Giocatore(String nome, boolean capitano){
-        this.goal=0;
-        this.nome=nome;
-        this.capitano=capitano;
+        setGoal(0);
+        setNome(nome);
+        setCapitano(capitano);
     }
     public Giocatore(int goal){
-        this.goal=goal;
-        nome=null;
-        capitano=false;
+        setGoal(goal);
+        setNome(null);
+        setCapitano(false);
     }
     public Giocatore(String nome){
-        goal=0;
-        this.nome=nome;
-        capitano=false;
+        setGoal(0);
+        setNome(nome);
+        setCapitano(false);
     }
     public Giocatore(boolean capitano){
-        goal=0;
-        nome=null;
-        this.capitano=capitano;
+        setGoal(0);
+        setNome(null);
+        setCapitano(capitano);
     }
     public int getGoal(){
         return goal;

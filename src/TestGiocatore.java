@@ -63,16 +63,16 @@ public class TestGiocatore {
                 case 5:
                     for (int i = 0; i < indice; i++) {
                     System.out.println(visualizzazioneForte(i));
-            }
+                    }
                     break;
                 case 6 :
-
+                    System.out.println(trovaCapitano(gt, indice));
                     break;
                 case 7 :
-
+                    settaCapitano(indice, gt);
                     break;
                 case 8 :
-
+                    System.out.println("arrivederci");
                     break;
 
             }
@@ -83,7 +83,6 @@ public class TestGiocatore {
 
     public static void aggiuntaGiocatore(int newGoal, String newNome, Boolean newCapitano, int indice){
         gt [indice] = new Giocatore(newGoal,newNome,newCapitano);
-
     }
     public static String stampa(int i){
         String giocatore="";
@@ -103,7 +102,30 @@ public class TestGiocatore {
         if(gt[giocat].getGoal()<5)
             return "non trovato";
         else
-            GiocatoreForte=gt[giocat].getNome();
+            GiocatoreForte=GiocatoreForte + gt[giocat].getNome();
             return GiocatoreForte;
     }
+    public static String trovaCapitano(Giocatore[]gt, int indice){
+        String capitan="";
+        for(int i=0; i<indice; i++){
+            if(gt[i].getCapitano()) {
+                capitan = capitan + gt[i].getNome() + " è il capitano";
+            }else{
+                capitan = capitan +"capitano non trovato";
+            }
+        }return capitan;
+    }
+    public static void settaCapitano(int indice, Giocatore[]gt){
+        boolean capitanoPresente=false;
+        int random;
+        for(int i = 0; i<indice;i++){
+            if(gt[i].getCapitano())
+                capitanoPresente=true;
+        }
+        if(capitanoPresente==false){
+            random=(int) (Math.random() * indice);
+            gt[random].setCapitano(true);
+        }
+    }
 }
+
