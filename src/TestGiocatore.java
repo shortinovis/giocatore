@@ -8,6 +8,7 @@ public class TestGiocatore {
         int ind=0;
         int goal;
         int sugador;
+        int cancellato;
         String nome;
         Boolean capitano;
         do{
@@ -44,7 +45,6 @@ public class TestGiocatore {
                     for (int i = 0; i < indice; i++) {
                         System.out.println(stampa(i));
                     }
-
                     break;
                 case 3:
                     System.out.println("di quale giocatore vorresti modificare i dati?");
@@ -66,7 +66,9 @@ public class TestGiocatore {
                         break;
                     }
                 case 4:
-
+                    System.out.println("quale giocatore vuoi cancellare?");
+                    cancellato=t.nextInt();
+                    cancellazione(cancellato, indice, gt);
                     break;
                 case 5:
                     for (int i = 0; i < indice; i++) {
@@ -102,8 +104,11 @@ public class TestGiocatore {
         gt[sugador].setNome(newNome);
         gt[sugador].setCapitano(newCapitano);
     }
-    public void cancellazione(){
-
+    public static int cancellazione(int cancellato, int indice, Giocatore[] gt){
+        for(int i=cancellato; i<indice;i++) {
+            gt[i] = gt[i + 1];
+        }
+        return indice-1;
     }
     public static String visualizzazioneForte(int giocat){
         String GiocatoreForte="";
