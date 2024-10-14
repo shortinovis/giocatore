@@ -84,7 +84,8 @@ public class TestGiocatore {
                 case 8 :
                     System.out.println("arrivederci");
                     break;
-
+                default:
+                    System.out.println("inserisci uno dei numeri elencati precedentemente");
             }
         }while (ind !=8);
     }
