@@ -25,17 +25,21 @@ public class TestGiocatore {
                 case 1:
                     System.out.println("dammi numero goal");
                     goal = t.nextInt();
-                    t.nextLine();
-                    System.out.println("dammi nome");
-                    nome = t.nextLine();
-                    t.nextLine();
-                    System.out.println("dimmi se è capitano");
-                    capitano = t.nextBoolean();
-                    t.nextLine();
-                    aggiuntaGiocatore(goal, nome, capitano, indice);
-                    indice++;
-
-                    break;
+                    if(goal<0){
+                        System.out.println("i goal non possono essere negativi");
+                        break;
+                    }else {
+                        t.nextLine();
+                        System.out.println("dammi nome");
+                        nome = t.nextLine();
+                        t.nextLine();
+                        System.out.println("dimmi se è capitano(true/false)");
+                        capitano = t.nextBoolean();
+                        t.nextLine();
+                        aggiuntaGiocatore(goal, nome, capitano, indice);
+                        indice++;
+                        break;
+                    }
                 case 2:
                     for (int i = 0; i < indice; i++) {
                         System.out.println(stampa(i));
@@ -47,16 +51,20 @@ public class TestGiocatore {
                     sugador = t.nextInt();
                     System.out.println("dammi nuovo numero goal");
                     goal = t.nextInt();
-                    t.nextLine();
-                    System.out.println("dammi nuovo nome");
-                    nome = t.nextLine();
-                    t.nextLine();
-                    System.out.println("dimmi se è capitano");
-                    capitano = t.nextBoolean();
-                    t.nextLine();
-                    modifica(sugador, goal, nome, capitano);
-
-                    break;
+                    if(goal<0){
+                        System.out.println("i goal non possono essere negativi");
+                        break;
+                    }else {
+                        t.nextLine();
+                        System.out.println("dammi nuovo nome");
+                        nome = t.nextLine();
+                        t.nextLine();
+                        System.out.println("dimmi se è capitano(true/false)");
+                        capitano = t.nextBoolean();
+                        t.nextLine();
+                        modifica(sugador, goal, nome, capitano);
+                        break;
+                    }
                 case 4:
 
                     break;
